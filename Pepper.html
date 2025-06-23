@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shodha</title>
+     <style>
+        body {
+            background-color: #f5f5dc; 
+            font-size: 20px;         }
+        h1, h2 {
+            font-size: 32px;         }
+        p, li {
+            font-size: 22px; 
+        }
+        button {
+            font-size: 22px;
+            background-color: #8b4513; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none;
+            cursor: pointer;         }
+        button:hover {
+            background-color: #5a3310;         }
+    </style>
+
+</head>
+<body>
+    <h1><center>About Pepper </center></h1><hr>
+    <p>Pepper is a commonly used spice, derived primarily from the dried berries of the pepper plant (genus Piper), particularly Piper nigrum. It is widely known for its sharp, pungent flavor and is one of the most versatile seasonings in global cuisine</p>
+    <h2>Uses</h2>
+    <li> Pepper is a foundational spice in many blends, such as garam masala, curry powder, and Cajun seasoning.</li>
+    <li>Black pepper is often used as a finishing spice, freshly ground over dishes just before serving, to retain its pungency and aroma.</li>
+    <h2>Price</h2>
+        <p>50g=70rs</p>
+        <p>100g=140rs</p>
+        <center><button id="backBtn">Go Back Shop</button><br>
+
+        </center>
+        
+        <script>
+                        document.getElementById("backBtn").onclick = function() {
+                if (window.history.length > 1) {
+                    
+                    window.history.back();
+                } else {
+                   
+                    window.location.href = "shop.html";  
+                }
+            };
+        </script>
+</body>
+</html>

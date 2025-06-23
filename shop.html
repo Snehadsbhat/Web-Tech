@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shodha</title>
+    <link href='/style2.css' rel='stylesheet'>
+    <style>
+        .spice-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .spice-item {
+            text-align: center;
+        }
+
+        .spice-item img {
+            transition: transform 0.3s ease; 
+        }
+
+        .spice-item img:hover {
+            transform: scale(1.1); 
+        }
+    </style>
+</head>
+<body>
+    <h1><center>Our Shop Items</center></h1><hr>
+    <section id="shop" class="featured-spices">
+        <br><h2><center><strong>Featured Spices</strong> </center></h2><br><br><br><br><br>
+        <div class="spice-list">
+            <div class="spice-item" data-spice="Turmeric">
+                <a href="Turmeric.html">
+                    <img src="Turmeric.jpg" alt="Turmeric" width="200px" height="170px" title="Turmeric"><br>Turmeric
+                </a>
+            </div>
+            <div class="spice-item" data-spice="Cinnamon">
+                <a href="Cinnamon.html">
+                    <img src="Cinnamon.jpg" alt="Cinnamon" width="200px" height="170px" title="Cinnamon"><br>Cinnamon
+                </a>
+            </div>
+            <div class="spice-item" data-spice="Pepper">
+                <a href="Pepper.html">
+                    <img src="Pepper.jpg" alt="Pepper" width="200px" height="170px" title="Pepper"><br>Pepper
+                </a>
+            </div>
+            <div class="spice-item" data-spice="Clove">
+                <a href="Clove.html">
+                    <img src="Clove.jpeg" alt="Clove" width="200px" height="170px" title="Clove"><br>Clove
+                </a>
+            </div>
+            <div class="spice-item" data-spice="Cardamom1">
+                <a href="Cardamom.html">
+                    <img src="cardamom1.jpeg" alt="Cardamom1" width="200px" height="170px" title="Cardamom"><br>Cardamom
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

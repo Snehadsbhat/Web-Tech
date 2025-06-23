@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shodha</title>
+    <style>
+        body {
+            background-color: #f5f5dc;
+            font-size: 20px;      
+   }
+        h1, h2 {
+            font-size: 32px; 
+        }
+        p, li {
+            font-size: 22px;       
+  }
+        button {
+            font-size: 22px; 
+            background-color: #8b4513; 
+            color: white; 
+            padding: 10px 20px;
+            border: none; 
+            cursor: pointer; 
+        }
+        button:hover {
+            background-color: #5a3310;        
+ }
+    </style>
+</head>
+<body>
+    <h1><center>About Cinnamon</center></h1><hr>
+    <p>This spice is obtained from the inner bark of trees belonging to the genus Cinnamomum. It is widely used in both sweet and savory dishes due to its distinctive warm, sweet, and slightly spicy flavor. The two most common types of cinnamon are Ceylon cinnamon (Cinnamomum verum), often referred to as "true cinnamon," and Cassia cinnamon (Cinnamomum cassia), which is more common and has a stronger, spicier taste.</p>
+    
+    <h2>Uses</h2>
+    <ul>
+        <li>Commonly used in baking (cinnamon rolls, cookies, pies).</li>
+        <li>Added to beverages (tea, coffee, hot chocolate).</li>
+        <li>Used in savory dishes in some cuisines (such as Indian, Middle Eastern, and Mexican).</li>
+    </ul>
+    
+    <h2>Price</h2>
+    <p>50g = 200rs</p>
+    <p>100g = 300rs</p>
+    
+    <center><button id="backBtn">Go Back Shop</button></center>
+
+    <script>
+        
+        document.getElementById("backBtn").onclick = function() {
+            if (window.history.length > 1) {
+                
+                window.history.back();
+            } else {
+               
+                window.location.href = "shop.html";              }
+        };
+    </script>
+</body>
+</html>

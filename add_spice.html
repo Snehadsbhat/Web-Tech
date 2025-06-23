@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Spice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #746262;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(179, 114, 114, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #c03939;
+            border-radius: 5px;
+        }
+        input[type="submit"], .back-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4b684c;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add New Spice</h1>
+        <form action="add_spice_action.php" method="POST" onsubmit="return validateSpiceID() & validateSpiceName() & validateStockQuantity() & validatePrice() & validateSupplierID()">
+            <label for="spice_id">Spice ID:</label>
+            <input type="text" id="spice_id" name="spice_id" required><br>
+            <label for="name">Spice Name:</label>
+            <input type="text" id="spice_name" name="name" required><br>
+            
+            <label for="price_per_unit">Price:</label>
+            <input type="text" id="price" name="price_per_unit" required><br>
+            
+            <label for="stock_quantity">Stock Quantity:</label>
+            <input type="text" id="stock_quantity" name="stock_quantity" required><br>
+            
+           <center> <a href="view_spices.php">View Items</a></center><br>
+            <input type="submit" value="Add Spice">
+        </form>
+     <br>   <button class="back-button" onclick="window.location.href='index1.html'">Back to Home</button>
+    </div>
+
+    <script>
+        function validateSpiceID() {
+            var spiceID = document.getElementById('spice_id').value;
+            var re = /^[0-9]{1,}$/;  // Assuming Spice ID is a number with at least 1 digit
+            var isValid = re.test(spiceID);
+            return toggleError("spice_id_error", isValid, "!** Invalid Spice ID **!");
+        }
+
+        function validateSpiceName() {
+            var spiceName = document.getElementById('spice_name').value;
+            var re = /^[A-Za-z ]{3,}$/;  // Spice Name should contain only letters and spaces, minimum 3 characters
+            return toggleError("spice_name_error", re.test(spiceName), "!** Invalid Spice Name **!");
+        }
+
+        function validateStockQuantity() {
+            var stockQuantity = document.getElementById('stock_quantity').value;
+            var re = /^[0-9]{1,}$/;  // Stock Quantity should be a valid number
+            return toggleError("stock_quantity_error", re.test(stockQuantity), "!** Invalid Stock Quantity **!");
+        }
+
+        function validatePrice() {
+            var price = document.getElementById('price').value;
+            var re = /^[0-9]+(\.[0-9]{1,2})?$/;  // Price can be a number or decimal with up to 2 decimal places
+            return toggleError("price_error", re.test(price), "!** Invalid Price **!");
+        }
+
+        function validateSupplierID() {
+            var supplierID = document.getElementById('supplier_id').value;
+            var re = /^[0-9]{1,}$/;  // Supplier ID should be a number
+            return toggleError("supplier_id_error", re.test(supplierID), "!** Invalid Supplier ID **!");
+        }
+
+        function toggleError(elementId, isValid, errorMessage) {
+            if (!isValid) {
+                document.getElementById(elementId).style.visibility = 'visible';
+                document.getElementById(elementId).innerHTML = errorMessage;
+                document.getElementById(elementId).style.color = "red";
+                return false;
+            } else {
+                document.getElementById(elementId).style.visibility = 'hidden';
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

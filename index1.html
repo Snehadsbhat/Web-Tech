@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spices Store</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .link-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spices Store Management</h1>
+        <div class="link-container">
+            <form action="index2.php" method="POST">
+                <button type="submit" name="action" value="add_spice">Add Spice</button>
+                <button type="submit" name="action" value="add_customer">Add Customer</button>
+                <button type="submit" name="action" value="add_supplier">Add Supplier</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

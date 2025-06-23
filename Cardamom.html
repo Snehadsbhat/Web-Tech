@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shodha</title>
+    <link href='/style2.css' rel='stylesheet'>
+    <link href="main.js" >
+</head>
+<body>
+<style>
+        body {
+            background-color: #f5f5dc;
+            font-size: 20px; 
+        }
+        h1, h2 {
+            font-size: 32px; 
+        }
+        p, li {
+            font-size: 22px; 
+        }
+        button {
+            font-size: 22px; 
+            background-color: #8b4513; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            cursor: pointer; 
+        }
+        button:hover {
+            background-color: #5a3310; 
+        }
+    </style>
+
+
+    <h1><center>About Cardamom</center></h1><hr>
+    <p>Cardamom is a spice made from the seeds of plants in the Elettaria and Amomum genera, which are part of the ginger family (Zingiberaceae). It is known for its unique flavor and aroma, which is warm, sweet, and slightly spicy. There are 2 varities green and black cardamom.</p>
+    <h2>Uses</h2>
+    <li>Cardamom is a key ingredient in curries, spice mixes (such as garam masala), desserts, teas (like chai), and coffee (e.g., Turkish and Arabic coffee).</li>
+    <li>The strong, pleasant fragrance of cardamom makes it popular in perfumes and other scented products.</li>
+    <h2>Price</h2>
+        <p>50g=100rs</p>
+        <p>100g=200rs</p>
+        <center><button id="backBtn">Go Back Shop</button>
+
+        </center>
+        <script>
+           
+            document.getElementById("backBtn").onclick = function() {
+                if (window.history.length > 1) {
+         
+                    window.history.back();
+                } else {
+          
+                    window.location.href = "shop.html";  
+                }
+            };
+        </script>
+
+</body>
+</html>

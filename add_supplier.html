@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Supplier</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2e4963;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        input[type="submit"],
+        .back-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover,
+        .back-button:hover {
+            background-color: #3a269c;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Supplier</h1>
+        <form action="add_supplier_action.php" method="POST">
+            <label for="supplier_id">Supplier ID:</label>
+            <input type="number" id="supplier_id" name="supplier_id" required>
+            
+            <label for="name">Supplier Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <input type="submit" value="Add Supplier">
+        </form>
+        <button class="back-button" onclick="window.location.href='index1.html'">Back to Home</button>
+    </div>
+</body>
+</html>

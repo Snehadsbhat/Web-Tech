@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shodha</title>
+    <link href='/style2.css' rel='stylesheet'>
+<style>
+        body {
+            background-color: #f5f5dc; 
+            font-size: 20px;        }
+        h1, h2 {
+            font-size: 32px; 
+        }
+        p, li {
+            font-size: 22px; 
+        }
+        button {
+            font-size: 22px; 
+            background-color: #8b4513; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            cursor: pointer; 
+        }
+        button:hover {
+            background-color: #5a3310; 
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1><center>About Clove</center> </h1><hr>
+    <p>Clove is a small, aromatic spice that comes from the flower buds of the clove tree (Syzygium aromaticum), native to the Maluku Islands in Indonesia. Cloves are used in various forms—whole, ground, or as an essential oil—in cooking, medicine, and even perfumery.Cloves are rich in antioxidants and possess anti-inflammatory properties, making them useful in traditional medicine.</p>
+    <h2>Uses</h2>
+    <li>Often added to spice blends like garam masala, curry powder, pumpkin spice, and used in baked goods such as cakes, cookies, pies, and gingerbread.</li>
+    <li>Cloves are often used in herbal remedies for colds, coughs, and sore throats. They help to loosen mucus and have mild expectorant properties.</li>
+    <li>Clove oil is applied to cuts, wounds, and fungal infections due to its antiseptic and antimicrobial properties.</li>
+    <h2>Price</h2>
+        <p>50g=100rs</p>
+        <p>100g=200rs</p>
+        <center><button id="backBtn">Go Back Shop</button>
+
+        </center>
+        <script>
+            
+            document.getElementById("backBtn").onclick = function() {
+                if (window.history.length > 1) {
+                    
+                    window.history.back();
+                } else {
+                    
+                    window.location.href = "shop.html";                  }
+            };
+        </script>
+</body>
+</html>

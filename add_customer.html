@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Customer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(103, 33, 33, 0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"], .back-button {
+            width: 100%;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover, .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add New Customer</h1>
+        <form action="add_customer_action.php" method="POST" onSubmit="return customer_id() & name() & email() & phone_number()">
+            <label for="customer_id">Customer ID:</label>
+            <input type="number" id="customer_id" name="customer_id" required><br>
+
+            <label for="name">Customer Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="phone_number">Phone Number:</label>
+            <input type="number" id="phone_number" name="phone_number" required><br>
+            
+            <input type="submit" value="Add Customer">
+        </form>
+        <button class="back-button" onclick="window.location.href='index1.html'">Back to Home</button>
+    </div>
+    
+    <script>
+        function name() {
+            var j = document.getElementById('name').value;
+            var k = isNaN(j);
+    
+            if (!k) {
+                document.getElementById("name").style.visibility = 'visible';
+                document.getElementById("name").innerHTML = "Numbers are not allowed";
+                document.getElementById("name").style.color = "red";
+                return false;
+            }
+    
+            if (j.length <= 2) {
+                document.getElementById("name").style.visibility = 'visible';
+                document.getElementById("name").innerHTML = "Name should contain at least 3 letters";
+                document.getElementById("name").style.color = "red";
+                return false;
+            } else {
+                document.getElementById("name").style.visibility = 'visible';
+                document.getElementById("name").innerHTML = "";
+                document.getElementById("name").style.color = "green";
+                return true;
+            }
+        }
+
+        function phone_number() {
+            var x = document.getElementById('phone_number').value;
+            var re = /^[6789][0-9]{9}$/;
+            var g = re.test(x);
+        
+            if (!g) {
+                document.getElementById("phone_number").style.visibility = 'visible';
+                document.getElementById("phone_number").innerHTML = "!** Invalid phone number **!";
+                document.getElementById("phone_number").style.color = "red";
+                return false;
+            } else {
+                document.getElementById("phone_number").style.visibility = 'visible';
+                document.getElementById("phone_number").innerHTML = "";
+                return true;    
+            }
+        }
+
+        function customer_id() {
+            var f = document.getElementById('customer_id').value;
+            var re = /^[0-4]{1}[0-9]{1}[0-9]{1}$/;
+            var l = re.test(f);
+        
+            if (!l) {
+                document.getElementById("customer_id").style.visibility = 'visible';
+                document.getElementById("customer_id").innerHTML = "!** Invalid Customer ID **!";
+                document.getElementById("customer_id").style.color = "red";
+                return false;
+            } else {
+                document.getElementById("customer_id").style.visibility = 'visible';
+                document.getElementById("customer_id").innerHTML = "";
+                return true;    
+            }
+        }
+
+        function email() {
+            var email = document.getElementById('email').value;
+            var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            var isValid = re.test(email);
+    
+            if (!isValid) {
+                document.getElementById("email").style.visibility = 'visible';
+                document.getElementById("email").innerHTML = "!** Invalid email address **!";
+                document.getElementById("email").style.color = "red";
+                return false;
+            } else {
+                document.getElementById("email").style.visibility = 'visible';
+                document.getElementById("email").innerHTML = "";
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
